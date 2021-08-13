@@ -150,7 +150,19 @@ function findById(movies, id) {
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre(movies, genre) {
+  let matchedGenreArr = [];
+  if(!movies.length){
+    return matchedGenreArr;
+  }
+
+  for (let i = 0; i < movies.length;i++) {
+    if(movies[i].genre.toLowerCase().includes(genre.toLowerCase())){
+      matchedGenreArr.push(movies[i]);
+    }
+  }
+  return matchedGenreArr;
+}
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
