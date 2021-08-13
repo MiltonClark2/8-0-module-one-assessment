@@ -186,7 +186,16 @@ function filterByGenre(movies, genre) {
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  let allMoviesMatchingArr = [];
+  for (let i = 0;i < movies.length;i++) {
+    let releaseYear = movies[i].released.slice(7);
+    if(Number(releaseYear) <= year){
+      allMoviesMatchingArr.push(movies[i])
+    }
+  }
+  return allMoviesMatchingArr;
+}
 
 /**
  * getBiggestBoxOfficeMovie()
