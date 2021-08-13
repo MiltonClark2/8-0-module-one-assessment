@@ -94,8 +94,13 @@ function getAverageIMDBRating(movies){
  */
 function countByRating(movies) {
   let ratingCountObj = {};
-
-
+  for(let movie of movies){
+    if(movie.rated in ratingCountObj){
+      ratingCountObj[movie.rated] += 1;
+    } else {
+      ratingCountObj[movie.rated] = 1;
+    }
+  }
   return ratingCountObj;
 }
 
